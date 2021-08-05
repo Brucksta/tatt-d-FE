@@ -47,6 +47,17 @@ function Signup(props) {
           <label htmlFor="pwd">Password:</label>
           <input placeholder="******" name="password" type="password" id="pwd" onChange={handleChange} />
         </div>
+        <div className="flex-row space-between my-2">
+          <p>What type of account do you want to create?</p>
+        </div>
+        <div className="flex-row space-between my-2">
+          <input type="checkbox" id="user" name="user" />
+        <label for="user">User</label>
+        </div>
+        <div className="flex-row space-between my-2">
+          <input type="checkbox" id="artist" name="artist" />
+        <label for="artist">Artist</label>
+        </div>
         <div className="flex-row flex-end">
           <button type="submit">Submit</button>
         </div>

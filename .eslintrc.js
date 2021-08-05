@@ -13,8 +13,8 @@ module.exports = {
   globals: {
     $: true,
   },
-  plugins: ['prettier', 'jsx-a11y'],
-  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'react-app', 'react-app/jest'],
+  plugins: ['jsx-a11y'],
+  extends: ['eslint:recommended', 'react-app', 'react-app/jest'],
   rules: {
     'no-alert': 0,
     'no-console': 0,

@@ -10,3 +10,15 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_ARTIST = gql`
+  {
+    user {
+      _id
+      firstName
+      lastName
+      email
+      styles
+    }
+  }
+`;

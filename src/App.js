@@ -9,7 +9,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import { StoreProvider } from './state/GlobalState';
-import Profile from './pages/Profile';
+import Profile from './pages/userProfile';
 
 const httpLink = createHttpLink({
   uri: process.env.REACT_APP_BASEURL + '/graphql',
