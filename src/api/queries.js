@@ -7,6 +7,10 @@ export const QUERY_USER = gql`
       firstName
       lastName
       email
+      bio
+      social
+      style
+      profilePicture
     }
   }
 `;
