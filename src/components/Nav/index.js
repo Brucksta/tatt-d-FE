@@ -35,7 +35,7 @@ function Nav() {
   return (
     <header className="flex-row px-1">
       <h1>
-        <Link to="/">My App</Link>
+        <Link to="/">Tatt'd</Link>
       </h1>
 
       <nav>{showNavigation()}</nav>

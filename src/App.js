@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { createUploadLink } from 'apollo-upload-client'
 
 import Home from './pages/Home';
 import NoMatch from './pages/NoMatch';
@@ -11,7 +12,7 @@ import Nav from './components/Nav';
 import { StoreProvider } from './state/GlobalState';
 import Profile from './pages/userProfile';
 
-const httpLink = createHttpLink({
+const httpLink = createUploadLink({
   uri: process.env.REACT_APP_BASEURL + '/graphql',
 });
 

@@ -21,3 +21,13 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const SINGLE_UPLOAD = gql`
+  mutation($file: Upload!) {
+    singleUpload(file: $file) {
+      filename
+      mimetype
+      encoding
+    }
+  }
+`;

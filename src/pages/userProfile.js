@@ -1,15 +1,11 @@
 import React from 'react';
 import { QUERY_USER } from '../api/queries';
 import { useQuery } from '@apollo/client';
+import UploadFile from '../components/UploadFile/UploadFile';
 
 
 const UserProfile = () => {
   const { data, loading } = useQuery(QUERY_USER);
-
-  // const {
-  //   bio,
-  //   name,
-  //  } = user
 
   if (loading) {
     return <div>Loading...</div>;
@@ -30,6 +26,7 @@ const UserProfile = () => {
     <p>My Tattoos</p> <p>Saved</p>
         </div>
       <div className="mainpagecontainer">
+        <UploadFile />
       
 
       </div>
