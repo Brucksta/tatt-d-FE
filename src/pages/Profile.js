@@ -20,7 +20,7 @@ const Profile = () => {
         //if artist
         <div className="">
           <div>
-            <h2 className="flex justify-center mt-5 text-xl">
+            <h2 className="flex justify-center mt-5 ">
               {data.user.firstName}
             </h2>
           </div>
