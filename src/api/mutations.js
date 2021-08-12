@@ -23,8 +23,8 @@ export const ADD_USER = gql`
 `;
 
 export const UPLOAD_FILE = gql`
-  mutation singleUpload($file: Upload!) {
-    singleUpload(file: $file) {
+  mutation singleUpload($file: Upload!, $tattooType: String!) {
+    singleUpload(file: $file, tattooType: $tattooType) {
       filename
       mimetype
       encoding

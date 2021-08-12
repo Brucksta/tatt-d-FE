@@ -21,6 +21,9 @@ function Nav() {
               Logout
             </a>
           </li>
+          <li className="mx-1">
+            <Link to="/upload">Upload</Link>
+            </li>
         </ul>
       );
     } else {
@@ -37,10 +40,12 @@ function Nav() {
     }
   }
 
-  const { data, loading } = useQuery(QUERY_USER);
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // const { data, loading } = useQuery(QUERY_USER);
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
+  
+  
 
   return (
     <header className="flex-row px-1 justify-center flex align-middle items-center">
@@ -49,13 +54,11 @@ function Nav() {
       </h1>
       
       <div className="ml-10">
-      {/* <Autocomplete
+      <Autocomplete
   id="combo-box-demo"
-  options={data.user.firstName}
-  getOptionLabel={(option) => option.firstName}
   style={{ width: 300, }}
   renderInput={(params) => <TextField {...params} label="Search" variant="outlined" />}
-/> */}
+/>
 </div>
 
       <nav className="ml-40">{showNavigation()}</nav>
@@ -63,4 +66,37 @@ function Nav() {
   );
 }
 
+
 export default Nav;
+
+// const [open, setOpen] = React.useState(false);
+// const [options, setOptions] = React.useState([]);
+// const loading = open && options.length === 0;
+
+// React.useEffect(() => {
+// let active = true;
+
+// if (!loading) {
+//   return undefined;
+// }
+
+// (async () => {
+//   const response = await fetch('https://country.register.gov.uk/records.json?page-size=5000');
+ 
+//   const countries = await response.json();
+
+//   if (active) {
+//     setOptions(Object.keys(countries).map((key) => countries[key].item[0]));
+//   }
+// })();
+
+// return () => {
+//   active = false;
+// };
+// }, [loading]);
+
+// React.useEffect(() => {
+// if (!open) {
+//   setOptions([]);
+// }
+// }, [open]);

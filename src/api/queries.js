@@ -7,6 +7,8 @@ export const QUERY_USER = gql`
       firstName
       lastName
       artist
+      tattoo
+      flash
       email
       bio
       social

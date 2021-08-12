@@ -11,6 +11,7 @@ import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import { StoreProvider } from './state/GlobalState';
 import Profile from './pages/Profile';
+import Upload from './pages/Upload';
 
 const httpLink = createUploadLink({
   uri: process.env.REACT_APP_BASEURL + '/graphql',
@@ -43,6 +44,7 @@ function App() {
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
               <Route path="/profile" component={Profile} />
+              <Route path="/upload" component={Upload} />
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
