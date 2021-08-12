@@ -4,9 +4,9 @@ export const QUERY_USER = gql`
   {
     user {
       _id
-      isArtist
       firstName
       lastName
+      artist
       email
       bio
       social

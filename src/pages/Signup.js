@@ -5,11 +5,12 @@ import Auth from '../state/auth';
 import { ADD_USER } from '../api/mutations';
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '', firstName: '', lastName: '' });
+  const [formState, setFormState] = useState({ email: '', password: '', firstName: '', lastName: '', artist: false });
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(formState)
     const mutationResponse = await addUser({
       variables: { ...formState },
     });
@@ -18,7 +19,9 @@ function Signup(props) {
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
     setFormState({
       ...formState,
       [name]: value,
@@ -48,15 +51,11 @@ function Signup(props) {
           <input placeholder="******" name="password" type="password" id="pwd" onChange={handleChange} />
         </div>
         <div className="flex-row space-between mt-10">
-          <p>What type of account do you want to create?</p>
-        </div>
-        <div className="flex-row">
-        <label className="mr-4" for="user">User</label>
-          <input type="checkbox" id="user" name="user" />
+          <p>Are you an artist?</p>
         </div>
         <div className="flex-row">
         <label className="mr-4" for="artist">Artist</label>
-          <input type="checkbox" id="artist" name="artist" />
+          <input type="checkbox" id="artist" name="artist" value={formState.artist} onChange={handleChange}/>
         </div>
         <div className="flex-row flex-end">
           <button type="submit">Submit</button>
