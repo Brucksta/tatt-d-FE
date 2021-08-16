@@ -6,8 +6,11 @@ import ArtistProfile from "../components/Artist/ArtistProfile";
 import UserProfile from "../components/User/UserProfile";
 import ArtistStyle from "../components/Artist/ArtistStyle";
 
+
 const Profile = () => {
   const { data, loading } = useQuery(QUERY_USER);
+  
+
 
   return (
     <div>
