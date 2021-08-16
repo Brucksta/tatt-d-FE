@@ -10,14 +10,14 @@ export default function ArtistProfile() {
   return (
     <div>
     <div className="flex justify-center mt-10 space-x-60">
-      <Link to={`${url}/artisttattoos`}>
-        Tattoos
+      <Link to={`${url}/artisttattoos`}><p className="text-yellow-500">
+        Tattoos</p>
       </Link>{" "}
-      <Link to={`${url}/artistflash`}>
-        Flash
+      <Link to={`${url}/artistflash`}><p className="text-yellow-500">
+        Flash</p>
       </Link>{" "}
-      <Link to={`${url}/booking`}>
-        Book
+      <Link to={`${url}/booking`}><p className="text-yellow-500">
+        Book</p>
       </Link>
     </div>
     

@@ -1,3 +1,7 @@
+* {
+  font-family: Inter;
+}
+
 :root {
   --primary: #232F3E;
   --secondary: #F3A847;
@@ -80,7 +84,8 @@ a:hover {
 }
 
 header {
-  background: var(--primary);
+  background-color: #FF8C00;
+  height: 100px;
 }
 
 header a {

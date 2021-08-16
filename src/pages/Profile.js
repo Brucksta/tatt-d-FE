@@ -10,27 +10,33 @@ const Profile = () => {
   const { data, loading } = useQuery(QUERY_USER);
 
   return (
+    <div>
+    {loading ? (
+      <div>Loading...</div>
+    ) : (
     <div className="mt-10">
       <div className="flex justify-center">
-        <img className="rounded-full h-24 w-24" />
+        <img className="rounded-full h-24 w-24" src={`${process.env.REACT_APP_BASEURL}/${data.user.profilePicture}`} alt={data.user.profilePicture}/>
       </div>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        //if artist
-        <div className="">
+       
+        <div>
           <div>
-            <h2 className="flex justify-center mt-5 ">
-              {data.user.firstName}
+            <h2 className="flex justify-center mt-5 font-bold">
+              {data.user.firstName}{" "}{data.user.lastName}
             </h2>
           </div>
-          <div>
+          <div className="border-b-2 border-gray-300 w-5/6 ml-40 mr-40">
             <p className="flex justify-center mt-10">
               {data.user.bio}
-              {data.user.artist ? <ArtistStyle /> : null}
             </p>
+              <div className="flex justify-center mt-10 mb-10">
+                
+                {data.user.artist ? <ArtistStyle /> : null}
+              </div>
           </div>
         </div>
+        </div>
+      
       )}
 
       {!loading && data.user.artist ? (

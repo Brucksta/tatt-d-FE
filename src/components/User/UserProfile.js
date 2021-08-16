@@ -11,7 +11,7 @@ export default function UserProfile() {
     return (
         <div>
       <div className="flex justify-center mt-10 space-x-60">
-      <Link to={`${url}/mytattoos`}><p>My Tattoos</p></Link> <Link to={`${url}/saved`}><p>Saved</p></Link>
+      <Link to={`${url}/mytattoos`}><p className="text-yellow-500">My Tattoos</p></Link> <Link to={`${url}/saved`}><p className="text-yellow-500">Saved</p></Link>
           </div>
        
             <Switch>

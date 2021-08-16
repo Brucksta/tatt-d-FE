@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../state/auth';
 import { ADD_USER } from '../api/mutations';
+import UploadProfilePic from '../components/User/SignupPicture';
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '', firstName: '', lastName: '', artist: false });
+  const [formState, setFormState] = useState({ email: '', password: '', firstName: '', lastName: '', artist: false, style: '', bio: '' });
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
@@ -49,6 +50,14 @@ function Signup(props) {
         <div className="flex-row space-between my-2">
           <label htmlFor="pwd">Password:</label>
           <input placeholder="******" name="password" type="password" id="pwd" onChange={handleChange} />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="bio">Bio:</label>
+          <input placeholder="describe yourself and your tattoos" name="bio" type="bio" id="bio" onChange={handleChange} />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="style">Styles:</label>
+          <input placeholder="Whats styles are you into?" name="style" type="style" id="style" onChange={handleChange} />
         </div>
         <div className="flex-row space-between mt-10">
           <p>Are you an artist?</p>

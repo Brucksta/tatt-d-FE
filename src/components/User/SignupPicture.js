@@ -1,8 +1,8 @@
 import { useMutation } from '@apollo/client';
 import React, {useState, useRef} from 'react';
-import { UPLOAD_FILE } from '../api/mutations';
+import { UPLOAD_FILE } from '../../api/mutations';
 
-const Upload = () => {
+const UploadProfilePic = () => {
   const [mutate ] = useMutation(UPLOAD_FILE)
   const [file, setFile] = useState(null);
   const inputRef = useRef(null);
@@ -27,12 +27,10 @@ const Upload = () => {
     
     <div className="container mt-20 flex justify-center">
       <form>
-      <h1>Upload a Tattoo!</h1>
-      <label for="option">What type of image?</label>
+      <h1>Upload a display picture!</h1>
+      <label for="option"></label>
       <select ref={optionsRef} name="option">
-      <option value="tattoo">Tattoo</option>
-      <option value="flash">Flash</option>
-      <option value="profilePicture">Profile Picture</option>
+      <option value="profilePicture"></option>
       </select>
       <br />
       <input ref={inputRef} type="file" onChange={updateFile} />
@@ -42,4 +40,4 @@ const Upload = () => {
   );
 };
 
-export default Upload
+export default UploadProfilePic

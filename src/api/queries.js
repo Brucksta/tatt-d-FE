@@ -18,14 +18,18 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_ARTIST = gql`
-  {
-    user {
+
+export const FIND_USER = gql`
+  query search($search: String!) {
+    findUsers(search: $search) {
       _id
       firstName
       lastName
       email
-      styles
+      bio
+      social
+      style
+      profilePicture
     }
   }
 `;
